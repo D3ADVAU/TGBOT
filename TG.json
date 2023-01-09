@@ -1,1 +1,1 @@
-{"Hi":"Hello $uname","Bye":"Good Bye.","D3ADVAU":"Dead-man is alive."}
+{"Hi":"Hello ".$uname."","Bye":"Good Bye.","D3ADVAU":"Dead-man is alive."}
