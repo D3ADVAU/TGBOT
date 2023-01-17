@@ -1,6 +1,7 @@
 {
  "D3ADVAU":
   {
+
    "Hi,Hlw,Hello":"Hello there.%0AI am d3advau.%0AHow may I help you!",
    "Bye,good bye,gd by,by,gd bye":"Good Bye.",
    "D3ADVAU":"Dead-man is alive.",
@@ -10,6 +11,9 @@
    "Fine,f9,I am fine,Alhamdulillah,valo,vlo":"That's good.",
    "How are you,how r u,hRu,kemon aso,kmn aso":"Alhamdulillah I am good.",
    "What are you doing,Ki koro,ki kro,what r u doing":"Nothing.",
-   "REMOVED":"fUCk,sUCk,sEx,cUdI,bAl,dOn,bUdA,dIcK,AsS,war,death,died,die,will die"
+   "new tool,tool lagbe,notun kisu,new update":"Kindly D3ADVAU IS NOT ACTIVE.%0AWe recive your message and D3ADVAU will response as soon as possible.",
+
+
+   "BLOCKED_WORDS":"fUCk,sUCk,sEx,cUdI,bAl,dOn,bUdA,dIcK,AsS,war,death,died,die,will die"
   }
 }
