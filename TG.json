@@ -10,9 +10,6 @@
    "Fine,f9,I am fine,Alhamdulillah,valo,vlo":"That's good.",
    "How are you,how r u,hRu,kemon aso,kmn aso":"Alhamdulillah I am good.",
    "What are you doing,Ki koro,ki kro,what r u doing":"Nothing.",
-   "REMOVED":
-    {
-   "fUCk","sUCk","sEx","cUdI","bAl","dOn","bIdA","dIcK","AsS","war","death","died","die","will die"
-    }
+   "REMOVED":"fUCk,sUCk,sEx,cUdI,bAl,dOn,bUdA,dIcK,AsS,war,death,died,die,will die"
   }
 }
