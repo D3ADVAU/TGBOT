@@ -2,16 +2,15 @@
  "D3ADVAU":
   {
 
-   "Hi,Hlw,Hello":"Hello there #{uname}.%0AI am d3advau.%0AHow may I help you!",
-   "Bye,good bye,gd by,by,gd bye":"Good Bye.",
+   "Hi,Hlw,Hello":"Hello #{uname}.%0AI am d3advau.%0AHow may I help you!",
    "D3ADVAU":"Dead-man is alive.",
    "tool":"What kind of tool you need?",
-   "Good Bye,Good Night,assa rakhi,rakhi":"Good Bye.%0ASee you soon",
-   "Good morning,Good mr9,gd mr9":"Good Morning.%0AHow are you?",
+   "Bye,gd by,by,gd bye,Good Bye,Good Night,assa rakhi,rakhi":"Good Bye #{uname}.%0ASee you soon",
+   "Good morning,Good mr9,gd mr9":"Good Morning #{uname}.%0AHow are you?",
    "Fine,f9,I am fine,Alhamdulillah,valo,vlo":"That's good.",
    "How are you,how r u,hRu,kemon aso,kmn aso":"Alhamdulillah I am good.",
    "What are you doing,Ki koro,ki kro,what r u doing":"Nothing.",
-   "new tool,tool lagbe,notun kisu,new update":"Kindly D3ADVAU IS NOT ACTIVE.%0AWe recive your message and D3ADVAU will response as soon as possible.",
+   "new tool,tool lagbe,notun kisu,new update":"Kindly @D3ADVAU IS NOT ACTIVE.%0AWe recive your message and @D3ADVAU will response as soon as possible.",
 
 
    "BLOCKED_WORDS":"fUCk,sUCk,sEx,cUdI,bAl,dOn,bUdA,dIcK,AsS,war,death,died,die,will die"
