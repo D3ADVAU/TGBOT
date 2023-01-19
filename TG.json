@@ -2,7 +2,7 @@
  "D3ADVAU":
   {
 
-   "Hi,Hlw,Hello":"Hello there.%0AI am d3advau.%0AHow may I help you!",
+   "Hi,Hlw,Hello":"Hello there ${uname}.%0AI am d3advau.%0AHow may I help you!",
    "Bye,good bye,gd by,by,gd bye":"Good Bye.",
    "D3ADVAU":"Dead-man is alive.",
    "tool":"What kind of tool you need?",
