@@ -1,4 +1,10 @@
 {
+//©COPYRIGHT @D3ADVAU
+//#{uname} = Username
+//#{fname} = firstname
+//#{lname} = lastname
+//#{uid} = User Id
+//#{ulan} = User Language
  "D3ADVAU":
   {
    "Hi,Hlw,Hello":"Hello #{uname}.%0AI am @D3ADVAU.%0AHow may I help you!",
