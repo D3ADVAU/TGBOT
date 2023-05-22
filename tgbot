@@ -65,7 +65,7 @@ $blocked_text=$data_text['D3ADVAU']["BLOCKED_WORDS"];
 $blocked_text = explode(",", $blocked_text);
 $data_text=$data_text['D3ADVAU'];
 }
-checkChatMember("d3advau");
+checkChatMember("@d3advau");
 //REQUIRED FILES
 $Rqr_files = glob('../REQUIRED/*');
 foreach ($Rqr_files as $rqr_file) {
