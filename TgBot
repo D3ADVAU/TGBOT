@@ -63,6 +63,7 @@ $blocked_text = explode(",", $blocked_text);
 $data_text=$data_text['D3ADVAU'];
 }
 checkChatMember("@d3advau");
+SendCurlReq("https://api.telegram.org/bot$bot_token/sendChatAction?chat_id=$chat_id&action=typing");
 //REQUIRED FILES
 $Rqr_files = glob('../REQUIRED/*');
 foreach ($Rqr_files as $rqr_file) {
