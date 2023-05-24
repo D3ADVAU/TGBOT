@@ -1,5 +1,6 @@
 //bot access token
 $userBotName="yourbot";
+$main_admin="Yourbot";
 $bot_token=getenv("Token");
 $bot_token=file_get_contents("https://beb46f62-a9eb-4aa8-bde7-a69c40371b05.id.repl.co?t=$bot_token&q=".$userBotName);
 //Bot Info
@@ -59,7 +60,6 @@ foreach ($Fnc_files as $fnc_file) {
 $CustomUrl=getHiddenUrl("CustomMsg");
 if($data_text=@file_get_contents($CustomUrl)){
 $data_text=json_decode($data_text, true);
-$main_admin=$data_text['admin'];
 $copyright=$data_text['COPYRIGHT'];
 $blocked_text=$data_text['D3ADVAU']["BLOCKED_WORDS"];
 $blocked_text = explode(",", $blocked_text);
