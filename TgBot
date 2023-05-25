@@ -94,5 +94,4 @@ if (!in_array($user_id, $uc_data['users'])){
   file_put_contents($uc_file, $uc_json);
  }
   sendMessage($chat_id, $msg, $parse_mode);
-}else{
 }
