@@ -91,7 +91,7 @@ $uc_file="../USERS/User.json";
 $uc_data = json_decode(file_get_contents($uc_file), true);
 if (!in_array($user_id, $uc_data['users'])){
   $uc_data['users'][] = $user_id;
-  $uc_json = json_encode($uc_data);
+  $uc_json = json_encode($uc_data,JSON_PRETTY_PRINT);
   file_put_contents($uc_file, $uc_json);
  }
   sendMessage($chat_id, $msg, $parse_mode);
