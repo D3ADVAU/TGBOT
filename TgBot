@@ -43,6 +43,8 @@ $last_name=$data["message"]["from"]["last_name"];
 $user_language=$data["message"]["from"]["language_code"];
 //Users Bot Status
 $user_bot=$data["message"]["from"]["is_bot"];
+//User Premium Status
+$ispremium = (strpos(file_get_contents($IsPremiumFile), $user_id) !== false) ? $ispremium=true : $ispremium = false;
 //user input text
 $text=$data["message"]["text"];
 $textt=explode(" ", $text);
