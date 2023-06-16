@@ -44,6 +44,7 @@ $user_language=$data["message"]["from"]["language_code"];
 //Users Bot Status
 $user_bot=$data["message"]["from"]["is_bot"];
 //User Premium Status
+$IsPremiumFile="../premium.txt";
 $ispremium = (strpos(file_get_contents($IsPremiumFile), $user_id) !== false) ? true : false;
 //user input text
 $text=$data["message"]["text"];
