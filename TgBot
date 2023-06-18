@@ -48,7 +48,7 @@ $user_bot=$data["message"]["from"]["is_bot"];
 //USER PREMIUM STATS
 if($user_id){
 $IsPremiumFile = (file_get_contents("premium.txt") ) ? file_get_contents("premium.txt") : file_get_contents("../premium.txt");
-$ispremium = (strpos($IsPremiumFile, "$user_id") !== false) ? true : false;
+$ispremium = (strpos($IsPremiumFile, "$user_id") !== false || $user_id == $AdminId) ? true : false;
 }
 //user input text
 $text=$data["message"]["text"];
