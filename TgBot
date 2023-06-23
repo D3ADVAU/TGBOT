@@ -98,10 +98,10 @@ foreach ($Cmd_files as $cmd_file) {
 }
 //FORWARDER
 if($message_id!==null){
-  $from=getenv('fr0m-group-a');
-  $to=getenv('to-group');
+  $from=getHiddenUrl('fr0m-group-a');
+  $to=getHiddenUrl('to-group');
   ForwardMessage($from,$to);
-  $from=getenv('fr0m-group-b');
+  $from=getHiddenUrl('fr0m-group-b');
   ForwardMessage($from,$to);
 }
 //BOT WEBVIEW & MSG SENDER
