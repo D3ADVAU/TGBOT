@@ -67,7 +67,7 @@ $t3xxtt=str_replace("$textta ","",$text);
 //ALL FUNCTIONS
 $Fnc_files = glob('../FUNCTIONS/*');
 foreach ($Fnc_files as $fnc_file) {
-    if( $fnc_file=="FUNCTIONS/curl.php"|| $fnc_file=="FUNCTIONS/checkpremium.php" || $fnc_file=="FUNCTIONS/1gethiddenurl.php"){
+    if( $fnc_file=="../FUNCTIONS/curl.php"|| $fnc_file=="../FUNCTIONS/checkpremium.php" || $fnc_file=="../FUNCTIONS/1gethiddenurl.php"){
       continue;
     }else{
     require ($fnc_file);
