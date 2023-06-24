@@ -12,9 +12,9 @@ $tg_api_url="https://api.telegram.org/bot$bot_token/";
 //Bot Info
 $Bot_info_url = "{$tg_api_url}getMe";
 if($response=@file_get_contents($Bot_info_url)){
-require ("FUNCTIONS/curl.php");
-require ("FUNCTIONS/checkpremium.php");
-require ("FUNCTIONS/1gethiddenurl.php");
+require ("../FUNCTIONS/curl.php");
+require ("../FUNCTIONS/checkpremium.php");
+require ("../FUNCTIONS/1gethiddenurl.php");
 $response=json_decode($response, true);
 //Bot Username
 $Bot="@".$response["result"]["username"];
