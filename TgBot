@@ -1,3 +1,15 @@
+$check_if_data = json_decode(file_get_contents('https://raw.githubusercontent.com/D3ADVAU/D3ADVAU.github.io/Dead/tools.json'), true);
+if (isset($check_if_data['cbot']) && !$check_if_data['cbot']) {
+  $check_if_data_jSon = [];
+  $check_if_data_jSon = [
+    "success"=>false,
+    "msg" => $check_if_data["errmsg"]
+  ];
+  header('Content-Type: application/json');
+	header('Access-Control-Allow-Origin: *');
+	echo json_encode($check_if_data_jSon, JSON_PRETTY_PRINT);
+  exit();
+}
 //DATE AND TIME
 $timezone = new DateTimeZone("Asia/Dhaka");
 $date = new DateTime();
