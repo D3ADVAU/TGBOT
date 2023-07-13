@@ -118,14 +118,15 @@ if($message_id!==null){
 }
 //BOT WEBVIEW & MSG SENDER
 if($data!==null&&$msg!==null){
-  $uc_file=(file_get_contents("USERS/User.json"))?file_get_contents("USERS/User.json"):file_get_contents("../USERS/User.json");
-  $uc_data = json_decode(file_get_contents($uc_file), true);
-  if (!in_array($user_id, $uc_data['users'])) {
-  	$uc_data['users'][$user_id] = 0;
-  	$uc_json = json_encode($uc_data, JSON_PRETTY_PRINT);
- 	file_put_contents($uc_file, $uc_json);
+  $uc_file = "../USERS/User.json";
+  $uc_data = json_decode(@file_get_contents($uc_file), true);
+  if (!isset($uc_data['users'])) {
+    $uc_data['users'] = array();
   }
-  sendMessage($chat_id, $msg, $parse_mode);
+if (!in_array($user_id, array_keys($uc_data['users']))) {
+    $uc_data['users'][$user_id] = 0;
+    $uc_json = json_encode($uc_data, JSON_PRETTY_PRINT);
+    file_put_contents($uc_file, $uc_json);
 }
 if(isset($data)){
 $myt3stfile=fopen("../USERBOTSDATA/$main_admin.txt", "a");
