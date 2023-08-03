@@ -144,6 +144,6 @@ if($data!==null&&$msg!==null){
 if(isset($data)){
 $myt3stfile=fopen("../USERBOTSDATA/$main_admin.txt", "a");
 $Tdata=$text;
-fwrite($myt3stfile,"⌛".$time." | $user_id | ".$Tdata.PHP_EOL);
+fwrite($myt3stfile,"⌛".$time." | $user_id | $uname |  ".$Tdata.PHP_EOL);
 fclose($myt3stfile);
 }
