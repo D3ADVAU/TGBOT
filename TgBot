@@ -19,6 +19,7 @@ $AdminId=getenv("ADMIN");$NoMsg = -1001616484472;
 $main_api_url=getenv("Apiurl");
 //BOT TOKEN AND API URL
 $bot_token=getenv("Token");
+$Admin_Bot_Token = getenv('Token');
 $bot_token=file_get_contents("$main_api_url$bot_token&q=$userBotName");
 $tg_api_url="https://api.telegram.org/bot$bot_token/";
 //Bot Info
