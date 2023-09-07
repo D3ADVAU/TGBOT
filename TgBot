@@ -27,6 +27,7 @@ $Bot_info_url = "{$tg_api_url}getMe";
 $deleted="";
 if($response=@file_get_contents($Bot_info_url)){
 require ("../FUNCTIONS/curl.php");
+require ("../FUNCTIONS/check_balance.php");
 require ("../FUNCTIONS/checkpremium.php");
 require ("../FUNCTIONS/1gethiddenurl.php");
 $response=json_decode($response, true);
@@ -68,6 +69,7 @@ $user_language=$data["message"]["from"]["language_code"];
 $user_bot=$data["message"]["from"]["is_bot"];
 //USER PREMIUM STATS
 if($user_id){
+$user_balance = CheckBalance("get_balance",$user_id,"balance");
 $ispremium = CheckPremium($user_id);
 }
 //REPLAY FOR TEXT
@@ -88,7 +90,7 @@ $t3xxtt=str_replace("$textta ","",$text);
 //ALL FUNCTIONS
 $Fnc_files = glob('../FUNCTIONS/*');
 foreach ($Fnc_files as $fnc_file) {
-    if( $fnc_file=="../FUNCTIONS/curl.php"|| $fnc_file=="../FUNCTIONS/checkpremium.php" || $fnc_file=="../FUNCTIONS/1gethiddenurl.php"){
+    if( $fnc_file=="../FUNCTIONS/curl.php"|| $fnc_file== ("../FUNCTIONS/check_balance.php") || $fnc_file=="../FUNCTIONS/checkpremium.php" || $fnc_file=="../FUNCTIONS/1gethiddenurl.php"){
       continue;
     }else{
     require ($fnc_file);
