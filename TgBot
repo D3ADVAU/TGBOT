@@ -77,6 +77,20 @@ $replay_for_user=$data["message"]["reply_to_message"]["from"]["id"];
 $replay_for_text=$data["message"]["reply_to_message"]["text"];
 //user input text
 $text=$data["message"]["text"];
+//CALLBACK DATA
+if (isset($data["callback_query"])) {
+  $callback_query_data = $data["callback_query"];
+  $callback_message_text = $callback_query_data["text"];
+  $text = $callback_query_data["data"];
+  $user_id = $callback_query_data["from"]["id"];
+  $uname = $callback_query_data["from"]["username"];
+  $first_name = $callback_query_data["from"]["first_name"];
+  $last_name = $callback_query_data["from"]["last_name"];
+  $user_language = $callback_query_data["from"]["language_code"];
+  $user_bot = $callback_query_data["from"]["is_bot"];
+  $chat_id = $callback_query_data["message"]["chat"]["id"];
+  $message_id = $callback_query_data["message"]["message_id"];
+}
 $textt=explode(" ", $text);
 //FIRST TEXT
 $textta=$textt[0];
